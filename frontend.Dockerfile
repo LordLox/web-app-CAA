@@ -1,8 +1,8 @@
 FROM node:22-alpine
 WORKDIR /app
 
-# Install su-exec for proper user switching and dos2unix for line endings
-RUN apk add --no-cache su-exec dos2unix
+# Install su-exec for proper user switching and dos2unix for line endings, plus build tools for native node modules
+RUN apk add --no-cache su-exec dos2unix python3 make g++
 
 RUN mkdir ./public
 COPY public/ ./public/
