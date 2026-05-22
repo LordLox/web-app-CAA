@@ -56,10 +56,24 @@ LLM_MODEL=llama3.1:8b
 
 ### 4. Build and Run
 
-Start the application using Docker Compose:
-
+**Using Docker (Recommended)**
 ```bash
 docker-compose up -d --build
+```
+
+**Without Docker (Local Setup)**
+Requires Node.js 22+ and Python 3.10+. Run these in two separate terminals:
+
+Terminal 1 (Node Server):
+```bash
+npm install
+npm start
+```
+
+Terminal 2 (Python API):
+```bash
+pip install -r requirements.txt
+python main.py
 ```
 
 Access the application at the URL defined in `PUBLIC_URL` (default: `http://localhost:3000`).
