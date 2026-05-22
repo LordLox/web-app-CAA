@@ -1,0 +1,289 @@
+{
+  "presente_indicativo": {
+    "description": "Used for actions happening now, habitual actions, and absolute truths.",
+    "general_rules": {
+      "-are verbs (parlare)": {
+        "conjugation": "io parlo, tu parli, lui/lei parla, noi parliamo, voi parlate, loro parlano",
+        "example": "Parlo italiano con i miei amici. (I speak Italian with my friends.)"
+      },
+      "-ere verbs (credere)": {
+        "conjugation": "io credo, tu credi, lui/lei crede, noi crediamo, voi credete, loro credono",
+        "example": "Non credo a tutto quello che sento. (I don't believe everything I hear.)"
+      },
+      "-ire verbs (dormire)": {
+        "conjugation": "io dormo, tu dormi, lui/lei dorme, noi dormiamo, voi dormite, loro dormono",
+        "example": "Il bambino dorme tranquillamente. (The child sleeps peacefully.)"
+      },
+      "-ire verbs with -isc- (finire)": {
+        "conjugation": "io finisco, tu finisci, lui/lei finisce, noi finiamo, voi finite, loro finiscono",
+        "notes": "Other common verbs: capire, preferire, pulire, costruire.",
+        "example": "Capisco la lezione. (I understand the lesson.)"
+      }
+    },
+    "irregular_verbs": {
+      "Essere (to be)": {
+        "conjugation": "sono, sei, è, siamo, siete, sono",
+        "example": "Siamo studenti. (We are students.)"
+      },
+      "Avere (to have)": {
+        "conjugation": "ho, hai, ha, abbiamo, avete, hanno",
+        "example": "Ho una macchina nuova. (I have a new car.)"
+      },
+      "Andare (to go)": {
+        "conjugation": "vado, vai, va, andiamo, andate, vanno",
+        "example": "Domani vado al mare. (Tomorrow I'm going to the sea.)"
+      },
+      "Fare (to do/make)": {
+        "conjugation": "faccio, fai, fa, facciamo, fate, fanno",
+        "example": "Cosa fai stasera? (What are you doing tonight?)"
+      },
+      "Volere (to want)": {
+        "conjugation": "voglio, vuoi, vuole, vogliamo, volete, vogliono",
+        "example": "Voglio un caffè, per favore. (I want a coffee, please.)"
+      },
+      "Potere (to be able to/can)": {
+        "conjugation": "posso, puoi, può, possiamo, potete, possono",
+        "example": "Posso entrare? (May I come in?)"
+      },
+      "Dovere (to have to/must)": {
+        "conjugation": "devo, devi, deve, dobbiamo, dovete, devono",
+        "example": "Devo studiare per l'esame. (I have to study for the exam.)"
+      },
+      "Dire (to say/tell)": {
+        "conjugation": "dico, dici, dice, diciamo, dite, dicono",
+        "example": "La mamma dice sempre la verità. (Mom always tells the truth.)"
+      },
+      "Venire (to come)": {
+        "conjugation": "vengo, vieni, viene, veniamo, venite, vengono",
+        "example": "Vieni alla festa con me? (Are you coming to the party with me?)"
+      },
+      "Uscire (to go out)": {
+        "conjugation": "esco, esci, esce, usciamo, uscite, escono",
+        "example": "Sabato sera esco con gli amici. (On Saturday evening I go out with friends.)"
+      },
+      "Sapere (to know)": {
+        "conjugation": "so, sai, sa, sappiamo, sapete, sanno",
+        "example": "Non so la risposta. (I don't know the answer.)"
+      },
+      "Stare (to stay/to be)": {
+        "conjugation": "sto, stai, sta, stiamo, state, stanno",
+        "example": "Come stai? (How are you?)"
+      }
+    }
+  },
+  "passato_prossimo": {
+    "description": "The most common past tense, used for completed actions.",
+    "rule": "Il Passato Prossimo si forma con il presente di 'essere' o 'avere' + il participio passato del verbo.",
+    "regular_participles": "-are -> -ato; -ere -> -uto; -ire -> -ito",
+    "auxiliary_choice": {
+      "avere": {
+        "rule": "Used with most transitive verbs (verbs that take a direct object) like 'mangiare', 'leggere', 'aiutare', 'volere'.",
+        "example": "Ho mangiato una pizza. (I ate a pizza.)"
+      },
+      "essere": {
+        "rule": "Used with verbs of motion (andare, venire), state of being (stare, rimanere), and all reflexive verbs. The participle must agree in gender and number with the subject.",
+        "example": "Maria è andata al cinema. / Marco e Luca sono andati al cinema."
+      }
+    },
+    "irregular_participles": {
+      "essere": "stato",
+      "avere": "avuto",
+      "fare": "fatto",
+      "dire": "detto",
+      "leggere": "letto",
+      "scrivere": "scritto",
+      "vedere": "visto",
+      "prendere": "preso",
+      "mettere": "messo",
+      "aprire": "aperto",
+      "chiudere": "chiuso",
+      "venire": "venuto",
+      "rimanere": "rimasto",
+      "chiedere": "chiesto",
+      "rispondere": "risposto"
+    },
+    "modal_verbs": {
+      "rule": "Modal verbs (dovere, potere, volere) take the auxiliary of the main verb that follows them.",
+      "examples": [
+        "Ho dovuto studiare (studiare takes avere).",
+        "Sono dovuto andare (andare takes essere)."
+      ]
+    }
+  },
+  "imperfetto": {
+    "description": "Used to describe ongoing past actions, habits, or states of being without a specific endpoint. It sets the scene.",
+    "regular_endings": {
+      "-are verbs (parlare)": {
+        "endings": "-avo, -avi, -ava, -avamo, -avate, -avano",
+        "example": "Da bambino, parlavo sempre con tutti. (As a child, I always used to talk to everyone.)"
+      },
+      "-ere verbs (credere)": {
+        "endings": "-evo, -evi, -eva, -evamo, -evate, -evano",
+        "example": "Credevo che fosse la scelta giusta. (I believed it was the right choice.)"
+      },
+      "-ire verbs (dormire)": {
+        "endings": "-ivo, -ivi, -iva, -ivamo, -ivate, -ivano",
+        "example": "Dormivo quando hai chiamato. (I was sleeping when you called.)"
+      }
+    },
+    "irregular_verbs": {
+      "Essere": "ero, eri, era, eravamo, eravate, erano",
+      "Fare": "facevo, facevi, faceva, facevamo, facevate, facevano",
+      "Dire": "dicevo, dicevi, diceva, dicevamo, dicevate, dicevano"
+    }
+  },
+  "futuro_semplice": {
+    "description": "Used to talk about actions that will happen in the future.",
+    "regular_rule": {
+      "rule": "For regular verbs, remove the final '-e' from the infinitive and add the future endings.",
+      "example": "Domani finiremo il progetto. (Tomorrow we will finish the project.)"
+    },
+    "endings": "-ò, -ai, -à, -emo, -ete, -anno",
+    "irregular_roots": {
+      "andare": "andr-",
+      "avere": "avr-",
+      "essere": "sar- (es. io sarò, noi saremo)",
+      "dare": "dar-",
+      "fare": "far-",
+      "vedere": "vedr-",
+      "potere": "potr-",
+      "dovere": "dovr- (es. io dovrò, noi dovremo)",
+      "sapere": "sapr-",
+      "vivere": "vivr-",
+      "venire": "verr- (es. io verrò, noi verremo)",
+      "volere": "vorr- (es. io vorrò, noi vorremo)"
+    },
+    "irregular_example": "L'anno prossimo sarò in Italia. noi vorremo visitare Roma. (We will want to visit Rome.) noi saremo in Italia. (We will be in Italy.)"
+  },
+  "subject_pronoun_mapping": {
+    "description": "Maps common nouns and names to their corresponding Italian subject pronouns to aid in verb conjugation.",
+    "mapping": {
+      "mamma": "lei",
+      "papà": "lui",
+      "nonna": "lei",
+      "nonno": "lui",
+      "maestra": "lei",
+      "maestro": "lui",
+      "dottore": "lui",
+      "dottoressa": "lei",
+      "bambino": "lui",
+      "bambina": "lei",
+      "ragazzo": "lui",
+      "ragazza": "lei",
+      "cane": "lui",
+      "gatto": "lui",
+      "i bambini": "loro",
+      "le bambine": "loro",
+      "mamma e papà": "loro"
+    }
+  },
+  "master_subject_detection_rules": {
+    "description": "Defines the master logic for identifying the correct subject for conjugation.",
+    "rules": [
+      {
+        "priority": 1,
+        "name": "Explicit Pronoun Priority",
+        "rule": "If an explicit pronoun ('io', 'tu', 'lui', 'lei', 'noi', 'voi', 'loro') is present, it ALWAYS determines the subject for conjugation, overriding any other nouns in the sentence.",
+        "examples": [
+          "Frase: 'Io e la mamma' -> Soggetto: 'noi'",
+          "Frase: 'Tu e il papà' -> Soggetto: 'voi'"
+        ]
+      },
+      {
+        "priority": 2,
+        "name": "Mapped Noun Identification",
+        "rule": "If no explicit pronoun is found, look for a noun in the 'subject_pronoun_mapping' and use its corresponding pronoun.",
+        "examples": [
+          "Frase: 'Mamma' -> Soggetto: 'lei'",
+          "Frase: 'I bambini' -> Soggetto: 'loro'"
+        ]
+      },
+      {
+        "priority": 3,
+        "name": "No Subject Found",
+        "rule": "If neither an explicit pronoun nor a mappable noun is found, the sentence has no subject.",
+        "examples": [
+          "Frase: 'Volere una mela' -> Soggetto: Nessuno"
+        ]
+      }
+    ]
+  },
+  "verb_conjugation_with_mapped_subject": {
+    "description": "Explains how to conjugate verbs when the subject is a noun that can be mapped to a pronoun.",
+    "rule": "If the subject of the sentence is a noun found in the 'subject_pronoun_mapping', use the corresponding pronoun to determine the correct verb conjugation. A noun subject is NEVER first-person singular ('io').",
+    "examples": [
+      {
+        "sentence": "Mamma volere la pizza",
+        "analysis": "'Mamma' maps to the pronoun 'lei' (third-person singular).",
+        "verb": "volere",
+        "conjugation": "vuole",
+        "result": "Mamma vuole la pizza"
+      },
+      {
+        "sentence": "I bambini andare al parco",
+        "analysis": "'I bambini' maps to the pronoun 'loro' (third-person plural).",
+        "verb": "andare",
+        "conjugation": "vanno",
+        "result": "I bambini vanno al parco"
+      },
+      {
+        "sentence": "Il cane essere felice",
+        "analysis": "'Il cane' maps to the pronoun 'lui' (third-person singular).",
+        "verb": "essere",
+        "conjugation": "è",
+        "result": "Il cane è felice"
+      }
+    ]
+  },
+  "pronoun_priority": {
+    "description": "Rule for handling sentences with both a mapped noun and an explicit pronoun.",
+    "rule": "If a sentence contains both a noun from the 'subject_pronoun_mapping' (e.g., 'mamma') and an explicit subject pronoun (e.g., 'io', 'tu', 'noi'), the explicit pronoun ALWAYS takes precedence for verb conjugation.",
+    "examples": [
+      {
+        "sentence": "Io e la mamma andare al cinema",
+        "analysis": "The presence of 'io' makes the subject 'noi' (first-person plural), overriding the singular 'mamma'.",
+        "verb": "andare",
+        "conjugation": "andiamo",
+        "result": "Io e la mamma andiamo al cinema"
+      },
+      {
+        "sentence": "Tu e il papà essere stanchi",
+        "analysis": "The presence of 'tu' makes the subject 'voi' (second-person plural), overriding the singular 'papà'.",
+        "verb": "essere",
+        "conjugation": "siete",
+        "result": "Tu e il papà siete stanchi"
+      }
+    ]
+  },
+  "no_subject_rule": {
+    "description": "Rule for handling sentences without a clear subject.",
+    "rule": "If the sentence contains no explicit pronouns ('io', 'tu', 'lui', 'lei', 'noi', 'voi', 'loro') and no mappable nouns from 'subject_pronoun_mapping', the verb should remain in its infinitive form.",
+    "examples": [
+      {
+        "sentence": "Volere una mela",
+        "analysis": "No subject is present.",
+        "verb": "volere",
+        "conjugation": "volere",
+        "result": "Volere una mela"
+      },
+      {
+        "sentence": "Essere felice",
+        "analysis": "No subject is present.",
+        "verb": "essere",
+        "conjugation": "essere",
+        "result": "Essere felice"
+      }
+    ]
+  },
+  "first_person_clarification": {
+    "description": "Important note on first-person singular conjugation.",
+    "rule": "The first-person singular ('io') conjugation is ONLY used when the pronoun 'io' is explicitly present in the sentence. It cannot be inferred from a noun like 'mamma' or any other subject.",
+    "examples": [
+      {
+        "sentence": "Mamma sono felice",
+        "analysis": "This is grammatically incorrect. 'Mamma' is 'lei', so the verb should be 'è'. The conjugation 'sono' is only for 'io' or 'loro'.",
+        "correct_conjugation": "Mamma è felice"
+      }
+    ]
+  }
+}
