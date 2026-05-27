@@ -8,6 +8,8 @@ const db = require("./database");
 const defaultGrid = require("./default-grid");
 const simplifiedGrid = require("./default-grid-2");
 const fetch = require("node-fetch");
+const dns = require("node:dns");
+dns.setDefaultResultOrder("ipv4first");
 
 const app = express();
 // const PUBLIC_URL = process.env.PUBLIC_URL || "http://localhost:3000";
