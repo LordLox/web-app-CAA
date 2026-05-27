@@ -36,32 +36,40 @@ logger.info(f"  LLM_HOST: {LLM_HOST}")
 logger.info(f"  LLM_MODEL: {LLM_MODEL}")
 logger.info(f"  OPENAI_API_KEY: {'***' if OPENAI_API_KEY else 'Not set'}")
 
-def llm_response(prompt):
+def llm_response(prompt, json_format=True, temperature=0.7):
     if BACKEND_TYPE.lower() == "ollama":
         ollama_client : OllamaClient = OllamaClient(host=LLM_HOST)
-        response = ollama_client.chat(
-            model=LLM_MODEL,
-            messages=[
+        kwargs = {
+            "model": LLM_MODEL,
+            "messages": [
                 {
                     "role": "user",
                     "content": prompt,
                 }
             ],
-            format="json"
-        )
+            "options": {"temperature": temperature}
+        }
+        if json_format:
+            kwargs["format"] = "json"
+            
+        response = ollama_client.chat(**kwargs)
         response_content = response["message"]["content"]
     elif BACKEND_TYPE.lower() == "openai":
         openai_client : OpenAIClient = OpenAIClient(base_url=LLM_HOST, api_key=OPENAI_API_KEY)
-        response = openai_client.chat.completions.create(
-            model=LLM_MODEL,
-            messages=[
+        kwargs = {
+            "model": LLM_MODEL,
+            "messages": [
                 {
                     "role": "user",
                     "content": prompt,
                 },
             ],
-            response_format={"type": "json_object"}
-        )
+            "temperature": temperature
+        }
+        if json_format:
+            kwargs["response_format"] = {"type": "json_object"}
+            
+        response = openai_client.chat.completions.create(**kwargs)
         response_content = response.choices[0].message.content
     else:
         raise ValueError("Unknown backend type after client instantiation.")
@@ -239,7 +247,7 @@ def get_conjugated_forms(sentence, base_forms, tense):
         logger.info(f"Sending request to LLM model: {LLM_MODEL}")
         start_time = datetime.now()
 
-        response = llm_response(prompt)
+        response = llm_response(prompt, json_format=True, temperature=0.1)
 
         end_time = datetime.now()
         logger.info(f"LLM response received in {(end_time - start_time).total_seconds():.2f} seconds")
@@ -268,35 +276,19 @@ def correct_sentence(sentence):
     """
     logger.info(f"Starting sentence correction for: '{sentence}'")
 
-    prompt = f"""
-        Sei un assistente linguistico italiano. Il tuo compito è prendere una frase composta da parole chiave (sostantivi, verbi all'infinito, aggettivi) e trasformarla in una frase italiana grammaticalmente corretta e naturale.
+    prompt = f"""Sei un correttore grammaticale per l'italiano. Il tuo unico compito è correggere la frase fornita e restituire il risultato in formato JSON.
+Devi SEMPRE usare il seguente formato JSON:
+{{
+  "frase_corretta": "la frase finale corretta"
+}}
 
-        Regole:
-        1. Aggiungi gli articoli necessari (es. "il", "la", "un'", "i").
-        2. Aggiungi le preposizioni articolate (es. "al", "dello", "nella").
-        3. Assicura la coerenza tra singolare e plurale.
-        4. Mantieni l'intento originale della frase.
-        5. La tua risposta deve contenere SOLO la frase corretta, senza alcuna spiegazione o testo aggiuntivo questo é OBBLIGATORIO.
+REGOLE FONDAMENTALI:
+1. Aggiungi articoli e preposizioni se necessari, e coniuga i verbi partendo dall'infinito.
+2. NON aggiungere spiegazioni.
+3. Se la frase è già corretta, restituiscila uguale nel JSON.
+4. "Io cammino" è una frase grammaticalmente corretta.
 
-        Esempi:
-        - Input: "Io volere mangiare pizza"
-        - Output: "Io voglio mangiare la pizza"
-
-        - Input: "Lei andare casa"
-        - Output: "Lei va a casa"
-
-        - Input: "Loro essere felice"
-        - Output: "Loro sono felici"
-
-        - Input: "Gatto su tavolo"
-        - Output: "Il gatto è sul tavolo"
-
-        - Input: "bambini giocare palla parco"
-        - Output: "I bambini giocano a palla al parco"
-
-        Ora, esegui il compito per la seguente richiesta:
-        - Input: "{sentence}"
-    """
+Frase da correggere: {sentence}"""
 
     logger.debug(f"Sentence correction prompt length: {len(prompt)} characters")
 
@@ -304,12 +296,15 @@ def correct_sentence(sentence):
         logger.info(f"Sending sentence correction request to LLM model: {LLM_MODEL}")
         start_time = datetime.now()
 
-        response = llm_response(prompt)
+        response = llm_response(prompt, json_format=True, temperature=0.0)
 
         end_time = datetime.now()
         logger.info(f"Sentence correction response received in {(end_time - start_time).total_seconds():.2f} seconds")
 
-        corrected_sentence = response.strip()
+        # Parse JSON to extract the corrected sentence
+        response_data = json.loads(response.strip())
+        corrected_sentence = response_data.get("frase_corretta", sentence).strip()
+        
         logger.info(f"Sentence corrected successfully: '{sentence}' -> '{corrected_sentence}'")
         return corrected_sentence
 
